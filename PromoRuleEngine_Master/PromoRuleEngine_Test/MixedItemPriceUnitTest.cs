@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace PromoRuleEngine_Test
 {
     [TestClass]
-    class MixedItemPriceUnitTest
+    public class MixedItemPriceUnitTest
     {
         private ITotalPriceCalculator _priceCalculator;
 
