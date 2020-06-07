@@ -8,8 +8,8 @@ namespace PromoRuleEngine_Master.model
 {
     public class CartItem
     {
-        public Product Item { get; set; }
-        public int TotalItem { get; set; }
+        public Product Product { get; set; }
+        public int TotalProduct { get; set; }
         public bool IsRuleApplied { get; set; }
     }
 }
