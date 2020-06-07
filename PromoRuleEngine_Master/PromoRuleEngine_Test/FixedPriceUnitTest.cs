@@ -19,8 +19,6 @@ namespace PromoRuleEngine_Test
 
             _promoRules.Add(new FixedPricePromoRule("A", 3, 130));
             _promoRules.Add(new FixedPricePromoRule("B", 2, 45));
-            //_promoRules.Add(new FixedPricePromoRule(new List<string> { "C", "D" }, 30, 1));
-
             _priceCalculator = new PriceCalculatorEngine(_promoRules);
         }
 
