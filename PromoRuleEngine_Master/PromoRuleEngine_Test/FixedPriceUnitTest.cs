@@ -27,15 +27,15 @@ namespace PromoRuleEngine_Test
         [TestMethod]
         public void ItemFixedPricePromotionRuleTest()
         {
-            var cart = new ShoppingCart();
-            var list = new List<CartItem>();
+            ShoppingCart shopingCart = new ShoppingCart();
+            List<CartItem> cartItems = new List<CartItem>();
 
-            list.Add(new CartItem() { TotalProduct = 1, Product = new Product() { ID = "A", Price = 50 } });
-            list.Add(new CartItem() { TotalProduct = 1, Product = new Product() { ID = "B", Price = 30 } });
-            list.Add(new CartItem() { TotalProduct = 1, Product = new Product() { ID = "C", Price = 20 } });
-            cart.CartItems = list;
+            cartItems.Add(new CartItem() { TotalProduct = 1, Product = new Product() { ID = "A", Price = 50 } });
+            cartItems.Add(new CartItem() { TotalProduct = 1, Product = new Product() { ID = "B", Price = 30 } });
+            cartItems.Add(new CartItem() { TotalProduct = 1, Product = new Product() { ID = "C", Price = 20 } });
+            shopingCart.CartItems = cartItems;
 
-            decimal TotalPrice = _priceCalculator.TotalPriceCalculation(cart);
+            decimal TotalPrice = _priceCalculator.TotalPriceCalculation(shopingCart);
 
             Assert.AreEqual(100.00m, TotalPrice);
         }
@@ -43,15 +43,15 @@ namespace PromoRuleEngine_Test
         [TestMethod]
         public void ItemFixedPricePromotionRuleTest2()
         {
-            var cart = new ShoppingCart();
-            var list = new List<CartItem>();
+            ShoppingCart shopingCart = new ShoppingCart();
+            List<CartItem> cartItems = new List<CartItem>();
 
-            list.Add(new CartItem() { TotalProduct = 5, Product = new Product() { ID = "A", Price = 50 } });
-            list.Add(new CartItem() { TotalProduct = 5, Product = new Product() { ID = "B", Price = 30 } });
-            list.Add(new CartItem() { TotalProduct = 1, Product = new Product() { ID = "C", Price = 20 } });
-            cart.CartItems = list;
+            cartItems.Add(new CartItem() { TotalProduct = 5, Product = new Product() { ID = "A", Price = 50 } });
+            cartItems.Add(new CartItem() { TotalProduct = 5, Product = new Product() { ID = "B", Price = 30 } });
+            cartItems.Add(new CartItem() { TotalProduct = 1, Product = new Product() { ID = "C", Price = 20 } });
+            shopingCart.CartItems = cartItems;
 
-            decimal TotalPrice = _priceCalculator.TotalPriceCalculation(cart);
+            decimal TotalPrice = _priceCalculator.TotalPriceCalculation(shopingCart);
 
             Assert.AreEqual(370.00m, TotalPrice);
         }
