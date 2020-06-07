@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PromoRuleEngine_Master.Interface
 {
-    interface ITotalPriceCalculator
+    public interface ITotalPriceCalculator
     {
         decimal TotalPriceCalculation(ShoppingCart cart);
     }

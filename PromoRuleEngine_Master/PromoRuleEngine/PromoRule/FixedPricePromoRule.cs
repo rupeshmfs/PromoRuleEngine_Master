@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PromoRuleEngine_Master.PromoRule
 {
-    class FixedPricePromoRule : ICalculatePromoPrice
+   public class FixedPricePromoRule : ICalculatePromoPrice
     {
         private readonly int _itemCount;
         private readonly decimal _itemPromoPrice;
