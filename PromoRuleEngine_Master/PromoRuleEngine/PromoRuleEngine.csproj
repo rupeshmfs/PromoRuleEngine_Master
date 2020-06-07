@@ -51,6 +51,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Interface\ICalculatePromoPrice.cs" />
     <Compile Include="PromoRule\FixedPricePromoRule.cs" />
+    <Compile Include="PromoRule\MixedItemPricePromoRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
