@@ -8,7 +8,7 @@ namespace PromoRuleEngine_Master.model
 {
     public class ShoppingCart
     {
-        public IEnumerable<CartItem> CartItems { get; set; }
+        public List<CartItem> CartItems { get; set; }
         public Decimal TotalPrice { get; set; }
     }
 }

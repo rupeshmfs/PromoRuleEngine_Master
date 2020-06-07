@@ -22,14 +22,21 @@ namespace PromoRuleEngine_Master.PromoRule
         }
         public decimal CalculatePromoPrice(ShoppingCart cart)
         {
-            var listItems = cart.CartItems.Where(c => c.Product.Equals(this._itemPromoCount) && this._lstProduct.Any(l => c.Product.ID.Equals(l.ToString())));
+            var listItems = cart.CartItems.Where(c => c.TotalProduct.Equals(this._itemPromoCount) && this._lstProduct.Any(l => c.Product.ID.Equals(l.ToString())));
             decimal TotalItemPrice = 0.0m;
 
             if (listItems.Count() == this._lstProduct.Count)
             {
                 TotalItemPrice += this._itemPromoPrice * this._itemPromoCount;
                 foreach (var item in listItems)
+                {
                     item.IsRuleApplied = true;
+
+                    int count = (item.TotalProduct - this._itemPromoCount) > 0 ? (item.TotalProduct - this._itemPromoCount) : 0;
+
+                    if(count > 0)                    
+                        cart.CartItems.Add(new CartItem { Product = item.Product, TotalProduct = count, IsRuleApplied = false });                    
+                }                    
             }
             return TotalItemPrice;
         }
