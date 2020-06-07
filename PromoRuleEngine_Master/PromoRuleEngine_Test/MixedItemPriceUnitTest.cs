@@ -42,22 +42,6 @@ namespace PromoRuleEngine_Test
 
             Assert.AreEqual(280.00m, TotalPrice);
         }
-
-        [TestMethod]
-        public void MixedItemPromoPriceUnitTestCase2()
-        {
-            ShoppingCart shopingCart = new ShoppingCart();
-            List<CartItem> cartItems = new List<CartItem>();
-
-            cartItems.Add(new CartItem() { TotalProduct = 3, Product = new Product() { ID = "A", Price = 50 } });
-            cartItems.Add(new CartItem() { TotalProduct = 5, Product = new Product() { ID = "B", Price = 30 } });
-            cartItems.Add(new CartItem() { TotalProduct = 2, Product = new Product() { ID = "C", Price = 20 } });
-            cartItems.Add(new CartItem() { TotalProduct = 1, Product = new Product() { ID = "D", Price = 15 } });
-            shopingCart.CartItems = cartItems;
-
-            decimal TotalPrice = _priceCalculator.TotalPriceCalculation(shopingCart);
-
-            Assert.AreEqual(280.00m, TotalPrice);
-        }
+             
     }
 }
